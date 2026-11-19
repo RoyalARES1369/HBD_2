@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
-  font-family: "Acme";
+  font-family: "Acme", sans-serif;
   background: #000;
 }
 
@@ -28,7 +27,6 @@ body {
 .aman_v1369:hover {
   z-index: 1111;
   transform: perspective(2000px) rotate(-10deg);
-
   box-shadow: 5px 5px 20px rgb(235, 151, 128);
 }
 
@@ -39,6 +37,7 @@ body {
   border: 0px solid #000;
   box-sizing: border-box;
   transform-origin: left;
+  transform-style: preserve-3d;
   z-index: 1;
   transition: 1s;
 }
@@ -50,6 +49,45 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  backface-visibility: hidden;
+}
+
+/* Front page title with matching Acme font */
+.aman_v1369 .img-container .front-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  padding: 12px 16px;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  font-size: 2.1em;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+/* Blank inside-left page matching card theme */
+.aman_v1369 .img-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(165deg, #fdf6f3 0%, #f3e4df 100%);
+  box-shadow: inset -12px 0 20px -12px rgba(235, 151, 128, 0.45);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .aman_v1369:hover .img-container {
@@ -81,21 +119,19 @@ body {
     background: linear-gradient(to right, #f32170, #ff0c08, #710071, #eedd44);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: untold 0.1s infinite ease-in-out;
   }
   50% {
     background: linear-gradient(to right, #2fff00, #1008ff, #ec4705, #a744ee);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: untold 3s infinite ease-in-out;
   }
   100% {
     background: linear-gradient(to right, #f32121, #ff0890, #cdb903, #d122f8);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: untold 1s infinite ease-in-out;
   }
 }
+
 .aman_v1369 .aman_v1369-details p {
   margin: 0;
   padding: 0;
