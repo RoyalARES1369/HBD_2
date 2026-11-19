@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Acme";
+  font-family: "Acme", sans-serif;
   background: #000;
 }
 
@@ -52,6 +52,30 @@ body {
   backface-visibility: hidden;
 }
 
+/* Front page title with matching Acme font */
+.aman_v1369 .img-container .front-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  padding: 12px 16px;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  font-size: 2.1em;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.35),
+    transparent
+  );
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
 /* Blank inside-left page matching card theme */
 .aman_v1369 .img-container::after {
   content: "";
@@ -70,13 +94,18 @@ body {
   transform: rotateY(-135deg);
 }
 
+/* Second page (right side with details) */
 .aman_v1369 .aman_v1369-details {
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   padding: 20px;
   color: #000;
+  background: #e3e1dd;
+  box-shadow: inset 12px 0 20px -12px rgba(235, 151, 128, 0.35);
 }
 
 .aman_v1369 .aman_v1369-details h2 {
